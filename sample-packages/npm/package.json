@@ -1,16 +1,10 @@
-{
-  "name": "my-project",
-  "version": "1.0.0",
-  "description": "A basic Node.js project",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "check-links": "markdown-link-check **/*.md"
-  },
-  "keywords": ["node", "example"],
-  "author": "muhammadkakeeh",
-  "license": "ISC",
-  "devDependencies": {
-    "markdown-link-check": "^3.8.6"
-  }
-}
+name: Check Markdown links
+
+on: push
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
